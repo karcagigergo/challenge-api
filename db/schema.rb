@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2021_11_01_193508) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "phone"
-    t.integer "cell"
+    t.text "phone"
+    t.text "cell"
     t.string "nat"
     t.date "imported_t"
     t.string "gender"
