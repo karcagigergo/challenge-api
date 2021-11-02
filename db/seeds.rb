@@ -3,15 +3,16 @@ require "json"
 require 'rest-client'
 
 # API endpoint
-url = 'https://randomuser.me/api/?results=1'
+url = 'https://randomuser.me/api/?results=10'
 
 response = RestClient.get(url) 
 # array to store the response
 results = JSON.parse(response.body)
 
+puts "Destroying all users..."
+User.delete_all
+
 results["results"].each { |result|
-  puts 'Destroying users...'
-  User.destroy_all
   puts "Creating users..."
   user = User.create!(
     "name" => {

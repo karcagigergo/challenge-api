@@ -1,6 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
   #acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-  before_action :set_restaurant, only: [ :show, :update ]
+  before_action :set_user, only: [ :show, :update, :destroy ]
   
   def index
     @users = User.all
@@ -34,7 +34,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:gender, :name, :location, :email, :login, :phone, :cell, :picture)
+    params.require(:user).permit(:gender, :name, :title, :first, :last, :location, :email, :login, :phone, :cell, :picture)
   end
 
   def render_error
