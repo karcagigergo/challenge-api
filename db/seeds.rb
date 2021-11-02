@@ -1,10 +1,6 @@
-require 'uri'
 require 'pry-byebug'
-require "open-uri"
 require "json"
 require 'rest-client'
-OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
-OpenURI::Buffer.const_set 'StringMax', 0
 
 # API endpoint
 url = 'https://randomuser.me/api/?results=1'
@@ -18,7 +14,6 @@ results["results"].each { |result|
   User.destroy_all
   puts "Creating users..."
   user = User.create!(
-    password: 1234567,
     "name" => {
       "first" => result['name']['first'].capitalize,
       "last" => result['name']['last'].capitalize,
@@ -26,7 +21,7 @@ results["results"].each { |result|
     },
     "gender" => result['gender'],
     "location" => {
-      "street" => result['location']['stereet'],
+      "street" => result['location']['street'],
       "city" => result['location']['city'],
       "state" => result['location']['state'],
       "postcode" => result['location']['postcode'],
@@ -51,7 +46,7 @@ results["results"].each { |result|
     },
     "dob" => {
       "date" => result['dob']['date'],
-      "age" => result['dob']['ge']
+      "age" => result['dob']['age']
     },
     "registered" => {
       "date" => result['registered']['date'],
@@ -64,6 +59,7 @@ results["results"].each { |result|
       "medium" => result['picture']['medium'],
       "thumbnail" => result['picture']['thumbnail']
     },
-    "nat" => result['nat']
+    "nat" => result['nat'],
+    "imported_t" => DateTime.now.to_s(:db)
   )
 }
