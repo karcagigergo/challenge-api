@@ -15,6 +15,7 @@ User.delete_all
 results["results"].each { |result|
   puts "Creating users..."
   user = User.create!(
+    "password" => 6.times.map { rand(10) },
     "name" => {
       "first" => result['name']['first'].capitalize,
       "last" => result['name']['last'].capitalize,
