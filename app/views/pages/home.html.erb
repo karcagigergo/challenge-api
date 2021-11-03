@@ -1,8 +1,25 @@
 <%= render 'shared/navbar' %>
-<div class="container content my-5">
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-      <%= link_to "Admin", admin_root_path, class: "btn btn-outline-primary rounded-pill" %>
-    </div>
-  </div>
-</div>
+<div class="container content my-4">
+  <h2 class="text-center" style="color: black;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0, .2);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-family: Roboto, sans-serif;">Check your admin dashboard 
+    <%= link_to "here! 💪", admin_root_path, class: "link-nodeco" %></h2>
+  <br>
+  <h2 class="text-center" style="color: black;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0, .2);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-family: Roboto, sans-serif;">Check the API root <%= link_to "here! 🚀", api_v1_root_path, class: "link-nodeco" %></h2>
+  <br>
+  <h2 class="text-center" style="color: black;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0, .2);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-family: Roboto, sans-serif;">Check all the users in JSON 
+    <%= link_to "here! 👀", api_v1_users_path, class: "link-nodeco" %></h2>
+<br>
