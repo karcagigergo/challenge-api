@@ -12,6 +12,19 @@ results = JSON.parse(response.body)
 puts "Destroying all users..."
 User.delete_all
 
+puts "Creating admin"
+if !User.find_by(email: "admin@gmail.com")
+  case Rails.env
+  when "development"
+    User.create!(email: "admin@gmail.com", password: "123456", admin: true, name: "admin",
+      location: "home", login: "admin", dob: "admin", picture: "admin", registered: "admin")
+  when "production"
+    User.create(email: "admin@gmail.com", password: "123456", admin: true, name: "admin",
+      location: "home", login: "admin", dob: "admin", picture: "admin", registered: "admin")
+  end
+end
+puts "Admin created"
+
 results["results"].each { |result|
   puts "Creating users..."
   user = User.create!(
