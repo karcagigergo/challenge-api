@@ -12,10 +12,21 @@
 @import "components/index";
 @import "pages/index";
 
+body, html {
+  height: 100%;
+  color: black;
+}
+
+body {
+  background-color: #21D4FD;
+  background-image: linear-gradient(180deg, #21D4FD 0%, #B721FF 100%);
+  background-repeat: no-repeat;
+}
+
 .link-nodeco {
-  color: white;
+  color: black;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 }
