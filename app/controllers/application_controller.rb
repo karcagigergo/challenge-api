@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_admin
-  before_action :authenticate_user!
-
+  before_action :authenticate_user!, :set_admin
 
   def set_admin
     if !User.find_by(email: "admin@gmail.com")

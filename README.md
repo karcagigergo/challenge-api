@@ -28,7 +28,7 @@ This is also a challenge by coodeesh (https://coodesh.com/).
 
 ### How to use:
 1. run rails s, to boot up the local server
-2. the admin user is already set in ApplicationController with the following credentials: email: admin@gmail.com, password: 123456. Admin will be the first user and I made 10 more users (not admins) also set in the ApplicationController.
+2. the admin user is already set in ApplicationController with the following credentials: email: admin@gmail.com, password: 123456. Admin will be the first user and you have to run rails db:seed to populate the database with the first 10 users to start with.(see in db/seed.rb)
 3. Admin can modify any data from users with the help of ActiveAdmin. Root page has links and after the admin logs in these links become accessible (the links are: 1. to admin dashboard, 2. to api root with the first endpoint from the challenge with the message: REST Back-end Challenge 20201209 Running", 3. All users shown with GET /users)
 4. All the endpoints are up and working accordingly
 5. Users have an imported_t and a status field, too.
