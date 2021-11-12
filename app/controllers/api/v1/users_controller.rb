@@ -3,7 +3,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_user, only: [ :show, :update, :destroy ]
   
   def index
-    @users = User.page(params[:page] || 1).per(5)
+    @users = User.page(params[:page] || 1).per(params[:per_page] || 10)
   end
 
   def home; end
@@ -65,4 +65,9 @@ class Api::V1::UsersController < Api::V1::BaseController
   def set_user
     @user = User.find(params[:id])
   end
+
+  # def set_pagination_headers
+  #   headers["X-Total-Count"] = @users.total_count
+  #   headers["Link"] = '<https://http://localhost:3000/api/v1/users>; rel="next"'
+  # end
 end

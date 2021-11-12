@@ -43,6 +43,10 @@ This is also a challenge by coodeesh (https://coodesh.com/).
 
 4. All the endpoints are up and working accordingly
 
+5. - http://localhost:3000/api/v1/users - returns you all the users
+   - http://localhost:3000/api/v1/users?page=1 - first 10 users
+   - http://localhost:3000/api/v1/users?page=2 - second 10 users etc.... 
+
 5. Users have an imported_t and a status field, too.
 
 6. To schedule CRON first write this command in the command line: `service cron status`
