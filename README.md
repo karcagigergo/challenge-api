@@ -1,10 +1,10 @@
-### Title: challenge-api
+### Title: Challenge-API 🚀
 
 This is a REST API made with Ruby On Rails, to extract User info for a company called Pharma Inc.
 I used the randomuser API (https://randomuser.me/) to schedule seeding my database with JSON.
 This is also a challenge by coodeesh (https://coodesh.com/).
 
-### Specs:
+### Specs: ✔
   - Rails (rails 6.1.4);
   - Ruby (ruby 3.0.0)
   - psql (PostgreSQL 12.4) - database;
@@ -15,7 +15,7 @@ This is also a challenge by coodeesh (https://coodesh.com/).
   - Kaminari - To paginate the result on the index page.
 
 
-### How to install:
+### How to install: 🧠
 
 1. 
   - clone the project and create your own repository:
@@ -30,7 +30,7 @@ This is also a challenge by coodeesh (https://coodesh.com/).
   - bundle install
   - yarn install
 
-### How to use:
+### How to use: 🕹
 
 
 1. run rails s, to boot up the local server
