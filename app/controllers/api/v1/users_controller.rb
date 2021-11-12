@@ -3,7 +3,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_user, only: [ :show, :update, :destroy ]
   
   def index
-    @users = User.all
+    @users = User.page(params[:page] || 1).per(5)
   end
 
   def home; end

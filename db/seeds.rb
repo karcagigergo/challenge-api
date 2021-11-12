@@ -3,7 +3,7 @@ require "json"
 require 'rest-client'
 
 # API endpoint
-url = 'https://randomuser.me/api/?results=10'
+url = 'https://randomuser.me/api/?results=20'
 
 response = RestClient.get(url) 
 # array to store the response
