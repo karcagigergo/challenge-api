@@ -6,12 +6,9 @@ class Api::V1::UsersController < Api::V1::BaseController
     @users = User.all
   end
 
-  def home
-    puts "REST Back-end Challenge 20201209 Running"
-  end
+  def home; end
 
-  def show
-  end
+  def show; end
   
   def update
     if @user.update(user_params)
@@ -31,14 +28,33 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def destroy
-    @user.destroy
-    head :no_content
+    @user.status_trash!
+    render :show
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:gender, :name, :location, :email, :login, :phone, :cell, :picture)
+    params.require(:user).permit(
+      :gender,
+      :email,
+      :phone,
+      :cell,
+      :status,
+      :nat,
+      {:name => [:first, :last, :title]},
+      {:location => 
+        [
+          [:street => [:number, :name]], 
+          :city, 
+          :state, 
+          :postcode, 
+          [:coordinates => [:latitude, :longitude]], 
+          [:timezone => [:offset, :description]]
+        ]
+      },
+      {:picture => [:large, :medium, :thumbnail]}
+    )
   end
 
   def render_error

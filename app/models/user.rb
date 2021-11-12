@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   enum status: {
-   pending: 0,
-   active: 1,
-   archived: 2
+   active: 0,
+   trash: 1
   }, _prefix: true
   
   acts_as_token_authenticatable
