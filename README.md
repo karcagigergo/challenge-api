@@ -17,21 +17,18 @@ This is also a challenge by coodeesh (https://coodesh.com/).
 
 ### How to install: 🧠
 
-1. 
-  - clone the project and create your own repository:
-  - git clone git@github.com:karcagigergo/challenge-api.git --origin challenge-api your-project-name
-  - your-project-name
-  - git init .
-  - git add .
-  - git commit
-  - hub create
-2.  
-  - install dependencies:
-  - bundle install
-  - yarn install
+1. - clone the project and create your own repository:
+  ``git clone git@github.com:karcagigergo/challenge-api.git --origin challenge-api your-project-name
+    your-project-name
+    git init .
+    git add .
+    git commit
+    hub create``
+2. - install dependencies:
+  ``bundle install
+  yarn install``
 
 ### How to use: 🕹
-
 
 1. run `rails s`, to boot up the local server
 
