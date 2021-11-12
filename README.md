@@ -33,9 +33,9 @@ This is also a challenge by coodeesh (https://coodesh.com/).
 ### How to use: 🕹
 
 
-1. run rails s, to boot up the local server
+1. run `rails s`, to boot up the local server
 
-2. the admin user is already set in ApplicationController with the following credentials: email: admin@gmail.com, password: 123456. Admin will be the first user and you have to run rails db:seed to populate the database with the first 30 users to start with.(see in db/seed.rb)
+2. the admin user is already set in ApplicationController with the following credentials: email: admin@gmail.com, password: 123456. Admin will be the first user and you have to run rails `db:seed` to populate the database with the first 30 users to start with.(see in db/seed.rb)
 
 3. Admin can modify any data from users with the help of ActiveAdmin. Root page has links and after the admin logs in these links become accessible 
 
@@ -45,10 +45,10 @@ This is also a challenge by coodeesh (https://coodesh.com/).
 
 5. Users have an imported_t and a status field, too.
 
-6. To schedule CRON first write this command in the command line: 'service cron status'
-   If it says '* cron is not running' type this command into the command-line: sudo service cron start, and then check
-   again with 'service cron status'. If it says '* cron is running' you can proceed.
-   Type 'bundle exec whenever --clear-crontab' to clear the crontab then type this: "whenever --update-crontab --set environment='development'". This is to update crontab and start scheduling, you can check the crontab file with
-   'crontab -l'
+6. To schedule CRON first write this command in the command line: `service cron status`
+   If it says '* cron is not running' type this command into the command-line: `sudo service cron start`, and then check
+   again with `service cron status`. If it says '* cron is running' you can proceed.
+   Type `bundle exec whenever --clear-crontab` to clear the crontab then type this: `whenever --update-crontab --set environment='development'`. This is to update crontab and start scheduling, you can check the crontab file with
+   `crontab -l`
 
-7. After these commands every day at 4:30 AM the scheduled task (inject 100 new customers into the database) will be done until User.count reaches 2000.
+7. After these commands every day at 4:30 AM the scheduled task (inject 100 new customers into the database) will be done until `User.count` reaches 2000.
