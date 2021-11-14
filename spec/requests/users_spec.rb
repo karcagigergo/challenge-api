@@ -18,6 +18,7 @@ RSpec.describe "Users API", type: :request do
   describe "POST /api/v1/user" do
     it "should create new a user" do
       post '/api/v1/users', params: { user: {
+        "password": 1234567,
         "gender": "male",
         "email": "asdfg@gmail.com",
         "phone": "12345677",
@@ -50,15 +51,6 @@ RSpec.describe "Users API", type: :request do
           "large": "http://randomuser.me",
           "medium": "http://randomuser.me",
           "thumbnail": "http://randomuser.me"
-        },
-        "login": {
-          "uuid": "2c835ae5-dcdd-48af-9d82-cdffa89bef37",
-          "username": "goldenleopard429",
-          "password": "515000",
-          "salt": "hpmM9Dw0",
-          "md5": "f7faf7cc8aec82106a1bc4d6f7c5934f",
-          "sha1": "037f7e217b52b26d4e07fda343af578d74efa895",
-          "sha256": "3b4d33f16d0e7a07057e2e2a60e1b9e7074b830d35aeab4bb7e3346de610e8f8"
         }
       }
     }

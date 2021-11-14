@@ -54,8 +54,7 @@ class Api::V1::UsersController < Api::V1::BaseController
           [:timezone => [:offset, :description]]
         ]
       },
-      {:picture => [:large, :medium, :thumbnail]},
-      {:login => [:uuid, :username, :password, :salt, :md5, :sha1, :sha256]}
+      {:picture => [:large, :medium, :thumbnail]}
     )
   end
 
