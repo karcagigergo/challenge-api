@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 2021_11_03_205328) do
     t.string "nat"
     t.datetime "imported_t"
     t.string "gender"
-    t.json "name", null: false
-    t.json "location", null: false
-    t.json "login", null: false
-    t.json "dob", null: false
-    t.json "picture", null: false
-    t.json "registered", null: false
+    t.json "name"
+    t.json "location"
+    t.json "login"
+    t.json "dob"
+    t.json "picture"
+    t.json "registered"
     t.string "authentication_token", limit: 30
     t.boolean "admin", default: false, null: false
     t.integer "status", default: 0
