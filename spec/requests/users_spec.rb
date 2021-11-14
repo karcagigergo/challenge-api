@@ -17,44 +17,92 @@ RSpec.describe "Users API", type: :request do
 
   describe "POST /api/v1/user" do
     it "should create new a user" do
-      post '/api/v1/users', params: { user: {
-        "password": 1234567,
-        "gender": "male",
-        "email": "asdfg@gmail.com",
-        "phone": "12345677",
-        "cell": "13123123123",
-        "status": "active",
-        "nat": "DE",
-        "name": {
-          "first": "Kiss",
-          "last": "Béla",
-          "title": "Mr"
-        },
-        "location": {
-          "street": {
-            "number": "122",
-            "name": "Blankenburgerpark"
+      expect {
+        post '/api/v1/users', params: { user: {
+          "password": 1234567,
+          "gender": "test",
+          "email": "test@gmail.com",
+          "phone": "12345677",
+          "cell": "13123123123",
+          "status": "active",
+          "nat": "DE",
+          "name": {
+            "first": "test",
+            "last": "test",
+            "title": "test"
           },
-          "city": "Hellllooo",
-          "state": "Borsod",
-          "postcode": 3531,
-          "coordinates": {
-            "latitude": "-3242342",
-            "longitude": "324325.53252"
+          "location": {
+            "street": {
+              "number": "test",
+              "name": "test"
+            },
+            "city": "test",
+            "state": "test",
+            "postcode": 3531,
+            "coordinates": {
+              "latitude": "-test",
+              "longitude": "test.test"
+            },
+            "timezone": {
+              "offset": "test",
+              "description": "test"
+            }
           },
-          "timezone": {
-            "offset": "+3:50",
-            "description": "Taktaszada"
+          "picture": {
+            "large": "test",
+            "medium": "test",
+            "thumbnail": "test"
           }
-        },
-        "picture": {
-          "large": "http://randomuser.me",
-          "medium": "http://randomuser.me",
-          "thumbnail": "http://randomuser.me"
+         }
         }
-      }
-    }
+      }.to change { User.count }.from(0).to(1)
       expect(response).to have_http_status(:created)
     end
   end
+
+  describe "DELETE /api/v1/users/:id" do
+    it "should change the users status to trash" do
+      user = User.create(
+          password: 1234567,
+          gender: "test",
+          email: "test@gmail.com",
+          phone: "12345677",
+          cell: "13123123123",
+          status: "active",
+          nat: "DE",
+          name: {
+            first: "test",
+            last: "test",
+            title: "test"
+          },
+          location: {
+            street: {
+              number: "test",
+              name: "test"
+            },
+            city: "test",
+            state: "test",
+            postcode: 3531,
+            coordinates: {
+              latitude: "-test",
+              longitude: "test.test"
+            },
+            timezone: {
+              offset: "test",
+              description: "test"
+            }
+          },
+          picture: {
+            large: "test",
+            medium: "test",
+            thumbnail: "test"
+          }
+      )
+
+      expect {
+        delete "/api/v1/users/#{user.id}"
+      }.to change { user.status }.from("active").to("trash")
+    end
+  end
+
 end
