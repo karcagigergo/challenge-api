@@ -1,14 +1,16 @@
 AllCops:
   NewCops: enable
   Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - 'support/**/*'
-    - 'tmp/**/*'
-    - 'test/**/*'
+    - "app/admin/*"
+    - "bin/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "node_modules/**/*"
+    - "script/**/*"
+    - "spec/**/*"
+    - "support/**/*"
+    - "tmp/**/*"
+    - "test/**/*"
 
 Style/ConditionalAssignment:
   Enabled: false
@@ -33,10 +35,12 @@ Style/MissingRespondToMissing:
 Lint/MissingSuper:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  EnforcedStyle: never
 Layout/LineLength:
   Max: 120
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
   Enabled: false
+Layout/EndOfLine:
+  Enabled: False

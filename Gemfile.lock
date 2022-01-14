@@ -89,6 +89,7 @@ GEM
     arbre (1.4.0)
       activesupport (>= 3.0.0, < 6.2)
       ruby2_keywords (>= 0.0.2, < 1.0)
+    ast (2.4.2)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
     bcrypt (3.1.16)
@@ -187,6 +188,9 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.21.0)
+    parser (3.1.0.0)
+      ast (~> 2.4.1)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -231,6 +235,7 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
+    rainbow (3.1.1)
     rake (13.0.6)
     ransack (2.4.2)
       activerecord (>= 5.2.4)
@@ -267,6 +272,18 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.3)
+    rubocop (1.24.1)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.15.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.15.1)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -309,6 +326,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
+    unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -358,6 +376,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rest-client
   rspec-rails (~> 4.0.1)
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
